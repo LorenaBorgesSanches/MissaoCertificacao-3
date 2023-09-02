@@ -1,11 +1,12 @@
 
+
 Drop table Notificacao
 Drop table Pessoa
 drop table Endereco
 
 CREATE table Endereco
 (
-cep varchar(8) PRIMARY KEY,
+cep varchar(8) ,
 logradouro varchar(255) not null,
 bairro varchar(255),
 localidade varchar(255),
@@ -15,7 +16,6 @@ uf varchar(2)
 CREATE table Pessoa
 (
 nome varchar(255) not null,
-documento varchar(16) PRIMARY KEY,
 cep varchar(8) null,
 numero varchar(255),
 complemento varchar(255),

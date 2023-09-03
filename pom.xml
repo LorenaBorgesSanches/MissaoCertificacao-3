@@ -8,10 +8,10 @@
 		<version>3.1.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.missao</groupId>
-	<artifactId>notificacaoPje</artifactId>
+	<groupId>com.notificacoes</groupId>
+	<artifactId>pje</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>notificacaoPje</name>
+	<name>pje</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
@@ -24,13 +24,16 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-
+    	</dependency>
 		<dependency>
 			<groupId>com.microsoft.sqlserver</groupId>
 			<artifactId>mssql-jdbc</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+   		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -41,47 +44,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-	 <dependency>
-	  <groupId>org.eclipse.persistence</groupId>
-	  <artifactId>org.eclipse.persistence.core</artifactId>
-	  <version>2.7.10</version>
-	 </dependency>
-	 <dependency>
-	  <groupId>org.eclipse.persistence</groupId>
-	  <artifactId>org.eclipse.persistence.asm</artifactId>
-	  <version>9.2.0</version>
-	 </dependency>
-	 <dependency>
-	  <groupId>org.eclipse.persistence</groupId>
-	  <artifactId>org.eclipse.persistence.antlr</artifactId>
-	  <version>2.7.10</version>
-	 </dependency>
-	 <dependency>
-	  <groupId>org.eclipse.persistence</groupId>
-	  <artifactId>org.eclipse.persistence.jpa</artifactId>
-	  <version>2.7.10</version>
-	 </dependency>
-	 <dependency>
-	  <groupId>org.eclipse.persistence</groupId>
-	  <artifactId>org.eclipse.persistence.jpa.jpql</artifactId>
-	  <version>2.7.10</version>
-	 </dependency>
-	 <dependency>
-	  <groupId>org.eclipse.persistence</groupId>
-	  <artifactId>org.eclipse.persistence.moxy</artifactId>
-	  <version>2.7.10</version>
-	 </dependency>
-	 <dependency>
-	  <groupId>org.eclipse.persistence</groupId>
-	  <artifactId>jakarta.persistence</artifactId>
-	  <version>2.2.3</version>
-	 </dependency>
-	 <dependency>
-	  <groupId>org.eclipse.persistence</groupId>
-	  <artifactId>org.eclipse.persistence.jpa.modelgen.processor</artifactId>
-	  <version>2.7.10</version>
-	  <scope>provided</scope>
-	 </dependency>
+		
 	</dependencies>
 
 	<build>

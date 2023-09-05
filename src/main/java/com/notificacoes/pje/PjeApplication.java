@@ -9,5 +9,4 @@ public class PjeApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PjeApplication.class, args);
 	}
-
 }

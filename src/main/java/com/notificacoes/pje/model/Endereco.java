@@ -5,22 +5,24 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
 public class Endereco {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Getter @Setter private Integer id;
-    
-    @NotNull
-    @Column(nullable = false, unique = true)
-    @Getter @Setter private String cep;
+    private Integer id;
 
-    @Getter @Setter private String logradouro;
-    @Getter @Setter private String bairro;
-    @Getter @Setter private String localidade;
-    @Getter @Setter private String uf;
+    @NotBlank
+    @Column(nullable = false, unique = true)
+    private String cep;
+
+    private String logradouro;
+    private String bairro;
+    private String localidade;
+    private String uf;
 }

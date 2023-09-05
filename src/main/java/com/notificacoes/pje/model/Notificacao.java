@@ -4,49 +4,59 @@ import java.sql.Date;
 
 import com.notificacoes.pje.enums.StatusNotificacao;
 import com.notificacoes.pje.enums.TipoDocumento;
+import com.notificacoes.pje.enums.TipoNotificacao;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
 public class Notificacao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Getter @Setter private Integer id;
+    private Integer id;
 
     @ManyToOne
-    @JoinColumn(name="pessoa",referencedColumnName="id", nullable = false)
-    @NotNull
-    @Getter @Setter private Pessoa pessoa;
+    @JoinColumn(name = "pessoa", referencedColumnName = "id", nullable = false)
+    @NotBlank
+    private Pessoa pessoa;
 
-    @NotNull
+    @NotBlank
     @Column(nullable = false)
-    @Getter @Setter private String numProcesso;
+    private String numProcesso;
 
-    @NotNull
+    @NotBlank
     @Column(nullable = false)
-    @Getter @Setter private TipoDocumento tipoDocumento;
+    @Enumerated(EnumType.STRING)
+    private TipoDocumento tipoDocumento;
 
-    @NotNull
+    @NotBlank
     @Column(nullable = false)
-    @Getter @Setter private StatusNotificacao status;
+    @Enumerated(EnumType.STRING)
+    private StatusNotificacao status;
 
-    @NotNull
-    @Column(nullable = false)
-    @Getter @Setter private String descricao;
+    @Enumerated(EnumType.STRING)
+    private TipoNotificacao tipoNotificacao;
 
-    @NotNull
+    @NotBlank
     @Column(nullable = false)
-    @Getter @Setter private Date dataCadastro;
-    @Getter @Setter private Date dataSubmissao;
-    @Getter @Setter private Date dataEnvio;
-    @Getter @Setter private Date dateRecebimento;
+    private String descricao;
+
+    @NotBlank
+    @Column(nullable = false)
+    private Date dataCadastro;
+    private Date dataSubmissao;
+    private Date dataEnvio;
+    private Date dateRecebimento;
 }

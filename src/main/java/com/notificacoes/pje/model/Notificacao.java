@@ -1,6 +1,6 @@
 package com.notificacoes.pje.model;
 
-import java.sql.Date;
+import java.time.LocalDateTime;
 
 import com.notificacoes.pje.enums.StatusNotificacao;
 import com.notificacoes.pje.enums.TipoDocumento;
@@ -16,6 +16,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -29,19 +30,19 @@ public class Notificacao {
 
     @ManyToOne
     @JoinColumn(name = "pessoa", referencedColumnName = "id", nullable = false)
-    @NotBlank
+    @NotNull
     private Pessoa pessoa;
 
     @NotBlank
     @Column(nullable = false)
     private String numProcesso;
 
-    @NotBlank
+    @NotNull
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private TipoDocumento tipoDocumento;
 
-    @NotBlank
+    @NotNull
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private StatusNotificacao status;
@@ -53,10 +54,10 @@ public class Notificacao {
     @Column(nullable = false)
     private String descricao;
 
-    @NotBlank
+    @NotNull
     @Column(nullable = false)
-    private Date dataCadastro;
-    private Date dataSubmissao;
-    private Date dataEnvio;
-    private Date dateRecebimento;
+    private LocalDateTime dataCadastro;
+    private LocalDateTime dataSubmissao;
+    private LocalDateTime dataEnvio;
+    private LocalDateTime dataRecebimento;
 }

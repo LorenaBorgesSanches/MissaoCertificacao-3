@@ -7,18 +7,15 @@ import com.notificacoes.pje.repository.EnderecoRepository;
 import lombok.Getter;
 
 @Getter
-public class PessoaCriacaoDTO {
+public class PessoaAtualizacaoDTO {
     private String nome;
-    private String documento;
     private String cep;
     private String numeroEndereco;
     private String complemento;
     private String email;
 
-    public Pessoa converterParaModel(EnderecoRepository enderecoRepo) {
-        Pessoa pessoa = new Pessoa();
+    public Pessoa converterParaModel(Pessoa pessoa, EnderecoRepository enderecoRepo) {
         pessoa.setNome(nome);
-        pessoa.setDocumento(documento);
         pessoa.setNumeroEndereco(numeroEndereco);
         pessoa.setComplemento(complemento);
         pessoa.setEmail(email);

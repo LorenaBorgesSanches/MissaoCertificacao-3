@@ -15,6 +15,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -26,14 +27,14 @@ public class LoteEnvio {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @NotBlank
+    @NotNull
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private TipoLote tipoLote;
 
     @NotBlank
     @Column(nullable = false)
-    private Integer numLote;
+    private String numLote;
 
     @ElementCollection
     @CollectionTable(name = "lote_notificacoes", joinColumns = @JoinColumn(name = "num_lote"))

@@ -1,0 +1,234 @@
+{
+	"info": {
+		"_postman_id": "779b31a6-f30d-4e3e-93bd-0809c4c7d781",
+		"name": "Missao_Notificacoes_PJE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "pessoas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/pessoas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pessoas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pessoas",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"string\",\r\n    \"cep\": \"01001000\",\r\n    \"numeroEndereco\": \"string\",\r\n    \"complemento\": \"string\",\r\n    \"email\": \"teste@teste.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/pessoas/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pessoas",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pessoas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"string\",\r\n    \"documento\": \"22080329006\",\r\n    \"cep\": \"01001000\",\r\n    \"numeroEndereco\": \"string\",\r\n    \"complemento\": \"string\",\r\n    \"email\": \"teste@teste.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/pessoas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pessoas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "notificacoes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/notificacoes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"notificacoes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "notificacoes",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"documento\": \"99762622057\",\r\n    \"numProcesso\": \"9999999-99.9999.9.99.9999\",\r\n    \"tipoDocumento\": \"Outros\",\r\n    \"descricao\": \"teste 12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/notificacoes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"notificacoes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "notificacoes",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/notificacoes/22",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"notificacoes",
+						"22"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Integracao ECarta",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/integracao/ecartas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"integracao",
+						"ecartas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Integracao ECarta",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/integracao/ecartas/11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"integracao",
+						"ecartas",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Integracao DJE",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/integracao/dje",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"integracao",
+						"dje"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Integracao DJE",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/integracao/dje/22",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"integracao",
+						"dje",
+						"22"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

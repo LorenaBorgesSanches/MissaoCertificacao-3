@@ -17,6 +17,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -35,6 +36,7 @@ public class Notificacao {
 
     @NotBlank
     @Column(nullable = false)
+    @Pattern(regexp = "^\\d{7}-\\d{2}.\\d{4}.\\d.\\d{2}.\\d{4}$", message = "Número do processo inválido")
     private String numProcesso;
 
     @NotNull

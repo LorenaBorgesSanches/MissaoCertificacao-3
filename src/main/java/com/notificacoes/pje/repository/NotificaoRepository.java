@@ -14,4 +14,10 @@ public interface NotificaoRepository extends JpaRepository<Notificacao, Integer>
                    " INNER JOIN pessoa p" + 
                    " WHERE p.endereco Is Not Null AND n.status = :status")
     List<Notificacao> FindByStatus(StatusNotificacao status);
+
+    @Query(value = "SELECT n" +
+                   " FROM Notificacao n" +
+                   " INNER JOIN pessoa p" + 
+                   " WHERE p.endereco Is Null AND p.email Is Null AND n.status = :status")
+    List<Notificacao> FindByStatusEnderecoNullEmailNull(StatusNotificacao status);
 }

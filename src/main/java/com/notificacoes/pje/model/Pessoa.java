@@ -42,7 +42,7 @@ public class Pessoa {
     private String documento;
 
     @ManyToOne
-    @JoinColumn(name = "endereco", referencedColumnName = "id")
+    @JoinColumn(name = "endereco", referencedColumnName = "id", nullable = true)
     private Endereco endereco;
     private String numeroEndereco;
     private String complemento;

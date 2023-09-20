@@ -18,15 +18,12 @@ public class PessoaCriacaoDTO {
     private String numeroEndereco;
     private String complemento;
     private String email;
-    private final WebClient client;
-    private final EnderecoRepository enderecoRepo;
-
-    public PessoaCriacaoDTO(WebClient.Builder webClientBuilder, EnderecoRepository enderecoRepo) {
-        this.client = webClientBuilder.baseUrl("https://viacep.com.br/").build();
-        this.enderecoRepo = enderecoRepo;
-    }
+    public WebClient client;
+    public EnderecoRepository enderecoRepo;
 
     public Pessoa converterParaModel(EnderecoRepository enderecoRepo) {
+        WebClient client = WebClient.create("https://viacep.com.br/");
+
         Pessoa pessoa = new Pessoa();
         pessoa.setNome(nome);
         pessoa.setDocumento(documento);
@@ -34,11 +31,11 @@ public class PessoaCriacaoDTO {
         pessoa.setComplemento(complemento);
         pessoa.setEmail(email);
 
-        if (StringUtils.isEmpty(cep)) {
+        if (!StringUtils.hasText(cep)) {
             return pessoa;
         }
 
-        Endereco endereco = this.enderecoRepo.findByCep(cep);
+        Endereco endereco = enderecoRepo.findByCep(cep);
         if (endereco != null) {
             pessoa.setEndereco(endereco);
         } else {
@@ -61,7 +58,7 @@ public class PessoaCriacaoDTO {
                 endereco.setUf(enderecoViaCep.getUf());
 
                 // Salvando o endereço no banco de dados
-                endereco = this.enderecoRepo.save(endereco);
+                endereco = enderecoRepo.save(endereco);
                 pessoa.setEndereco(endereco);
             }
         }
